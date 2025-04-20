@@ -1,4 +1,5 @@
 streamlit==1.42.0
+langchain>=0.0.250 
 langchain-core==0.3.54          # or latest
 huggingface-hub==0.28.1
 transformers==4.48.2
