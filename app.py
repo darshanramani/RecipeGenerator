@@ -1,26 +1,29 @@
 import streamlit as st
-import os
+from langchain.llms import OpenAI
+from langchain.prompts import PromptTemplate
+from langchain.chains import LLMChain
 from recipe_bot.langchain_chain import get_recipe_response
+from langchain_community.llms import OpenAI
 
-# Set the OpenAI API key from Streamlit Secrets
-os.environ["OPENAI_API_KEY"] = st.secrets["OPENAI_API_KEY"]
 
-# Streamlit page config
+
+# Set Streamlit page config
 st.set_page_config(page_title="Recipe Chatbot", layout="centered")
+
 st.title("🥗 Recipe Generator Chatbot")
 
-# Input ingredients
+# 1. Input box for ingredients
 ingredients = st.text_input("Enter ingredients (comma separated):", placeholder="e.g. tomato, onion, paneer")
 
-# Diet type selector
+# 2. Veg/Non-Veg selection
 diet_choice = st.radio("Select Diet Type:", ["Vegetarian", "Non-Vegetarian"], horizontal=True)
 
-# Generate button
+# 3. Generate Recipe button
 if st.button("Get Recipe"):
     if ingredients.strip() == "":
         st.warning("Please enter at least one ingredient.")
     else:
         recipe_type = "vegetarian" if diet_choice == "Vegetarian" else "non-vegetarian"
         result = get_recipe_response(recipe_type, ingredients)
-        st.markdown("### 🧑‍🍳 Your Generated Recipe:")
-        st.success(result)
+
+        st.write(f"Result: {result}")

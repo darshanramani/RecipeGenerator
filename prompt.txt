@@ -1,3 +1,7 @@
 i am building one recipe generator project, till now I built very simple interface and now want to add some features and also improve UI, so first let me give you my current code for both files app.py and langchain_chain.py and then we can discuss what we can improve then you will guild me step by step
 
 
+
+I have one steamlit mini project which is cussrently run perfect in my local, now I want to deploy on hf space, so first look my code strucre and I give my code and all then you can suggest whay should I do 
+
+tree : to see strucre of code
