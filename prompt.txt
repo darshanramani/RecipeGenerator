@@ -1,0 +1,3 @@
+i am building one recipe generator project, till now I built very simple interface and now want to add some features and also improve UI, so first let me give you my current code for both files app.py and langchain_chain.py and then we can discuss what we can improve then you will guild me step by step
+
+
